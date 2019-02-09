@@ -61,12 +61,12 @@ def create_club():
     average= total/count
     print ("Avg age in this club = %d" % average)
     
-    	
+        
 
 def view_clubs():
     # your code goes here!
     for i in clubs:
-        print("NAME: %s \n DESCRIPTION: %s \n MEMBERS: %s)" %(i.name, i.description , len(i.members))
+        print("NAME: %s \n DESCRIPTION: %s \n MEMBERS: %s)" %(i.name, i.description , len(i.members)))
     
 
 def view_club_members():
@@ -75,8 +75,8 @@ def view_club_members():
     club_members= input ("enter the name of the club to view its members")
     
     for i in clubs:
-    	if club_members.capitalize() == i.name:
-    		i.print_member_list()
+        if  i.name.lower() == club_members.lower():
+            i.print_member_list()
 
     
 
@@ -85,9 +85,9 @@ def join_clubs():
     club_join= input ("enter the name of the club you'd like to join: ")
     
     for i in clubs:
-    	if club_join.capitalize() == i.name:
-    		i.recruit_member(myself)
-    		print ("%s has joined %s"%(my_name,i.name))
+        if club_join.capitalize() == i.name:
+            i.recruit_member(myself)
+            print ("%s has joined %s"%(my_name,i.name))
     
 
 def application():
@@ -96,17 +96,15 @@ def application():
     user_input=options()
               
     while user_input != str(-1):
-    	if user_input == str(1):
-    		create_club()         
-    	elif user_input == str(2):
+        if user_input == str(1):
+            create_club()         
+        elif user_input == str(2):
             view_clubs()
-    		join_clubs()
-    	elif user_input == str(3):
-    		view_clubs()
-    	elif user_input == str(4):
+            join_clubs()
+        elif user_input == str(3):
             view_clubs()
-    		view_club_members()
-    	else:
-    		options()
-            
-    
+        elif user_input == str(4):
+            view_clubs()
+            view_club_members()
+        else:
+            options()

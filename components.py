@@ -39,4 +39,3 @@ class Club():
                 print ("%s (%d years old, President) - %s" % (member.name, member.age, member.bio))
 
 
-
